@@ -23,3 +23,12 @@ def test_listar_produtos_status_code():
 def test_listar_produtos_status_code():
     response = client.get("/produtos")
     assert len(response.json()) == 3
+
+def test_pega_um_produto():
+    response = client.get("/produtos/1")
+    assert response.json() == {
+        "id": 1,
+        "nome": "Smartphone",
+        "descrição": "Um telefone inteligente",
+        "preco": 1500.0,
+    }
