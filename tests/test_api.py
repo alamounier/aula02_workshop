@@ -2,7 +2,7 @@ import pytest
 
 from fastapi.testclient import TestClient
 
-from main import app 
+from app.main import app 
 
 client = TestClient(app)
 
@@ -29,6 +29,6 @@ def test_pega_um_produto():
     assert response.json() == {
         "id": 1,
         "nome": "Smartphone",
-        "descrição": "Um telefone inteligente",
+        "descricao": "Um telefone inteligente",
         "preco": 1500.0,
     }
